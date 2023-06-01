@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .summary {
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Resumen de transacciones - {{current_year}}</h1>
+        </div>
+
+        <div class="logo">
+            <img src="https://blog.storicard.com/wp-content/uploads/2019/07/Stori-horizontal-11.jpg" alt="Logo">
+        </div>
+
+        <div class="summary">
+            <h2>Balance total: {{total_balance}}</h2>
+            <h3>Promedio de crédito por mes:</h3>
+            <table>
+                <tr>
+                    <th>Mes</th>
+                    <th>Promedio de crédito</th>
+                </tr>
+                {{average_credit_per_month}}
+            </table>
+            <h3>Promedio de débito por mes:</h3>
+            <table>
+                <tr>
+                    <th>Mes</th>
+                    <th>Promedio de débito</th>
+                </tr>
+                {{average_debit_per_month}}
+            </table>
+            <h3>Número de transacciones por mes: {{transaction_count}}</h3>
+        </div>
+    </div>
+</body>
+</html>
