@@ -19,7 +19,7 @@ def lambda_handler(event, context):
     transactions, total_balance, average_credit_per_month, average_debit_per_month, transaction_count, months = process_csv_data(csv_content)
     
     # Lee el contenido de la plantilla HTML
-    with open('template.html', 'r') as f:
+    with open('templates/report.html', 'r') as f:
         template = f.read()
     
     # Reemplaza las variables en la plantilla HTML con los valores correspondientes
@@ -39,5 +39,5 @@ def lambda_handler(event, context):
     # Devuelve una respuesta indicando que el correo electrónico se ha enviado correctamente
     return {
         'statusCode': 200,
-        'body': months
+        'body': 'Email report sent successfully.'
     }
